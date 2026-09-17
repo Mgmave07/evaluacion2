@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ni.uam.edu.evaluacion2.controller.MainController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <MenuItem mnemonicParsing="false" onAction="#handleConfigurarCarpeta" text="Configurar Carpeta..." />
+                    <SeparatorMenuItem />
+                </Menu>
+                <Menu mnemonicParsing="false" text="Procesos">
+                    <MenuItem mnemonicParsing="false" onAction="#handleBtnRegistro" text="Registro de Cliente" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleBtnConsulta" text="Consulta de Clientes" />
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <Button fx:id="btnRegistro" mnemonicParsing="false" onAction="#handleBtnRegistro" text="Nuevo Cliente" />
+                <Button fx:id="btnConsulta" mnemonicParsing="false" onAction="#handleBtnConsulta" text="Consultar Clientes" />
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label text="Sistema de Gestión de Solicitudes">
+                <font><Font size="22.0" /></font>
+            </Label>
+            <Label fx:id="lblAreaTrabajo" text="Haga clic derecho aquí para ver el menú contextual">
+                <font><Font size="14.0" /></font>
+                <padding><Insets bottom="30" left="30" right="30" top="30" /></padding>
+            </Label>
+        </VBox>
+    </center>
+</BorderPane>

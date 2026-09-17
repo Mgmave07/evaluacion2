@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<VBox onKeyPressed="#handleKeyPressed" spacing="15" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ni.uam.edu.evaluacion2.controller.DetalleController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <Label text="Detalle del Cliente">
+        <font><Font size="20.0" /></font>
+    </Label>
+    <Separator />
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <GridPane hgap="10" vgap="10" HBox.hgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="150" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+            <Label text="Nombres:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="lblNombres" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Apellidos:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="lblApellidos" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Tipo de Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="lblTipo" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Ciudad:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="lblCiudad" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Fecha de Nacimiento:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label fx:id="lblFecha" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Tipo de Solicitud:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label fx:id="lblSolicitud" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="Servicios:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Label fx:id="lblServicios" text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        </GridPane>
+
+        <ImageView fx:id="imgFotoDetalle" fitHeight="200" fitWidth="200" preserveRatio="true" />
+    </HBox>
+
+    <Separator />
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button onAction="#handleVolver" prefWidth="120" text="← Volver" />
+    </HBox>
+</VBox>
+
