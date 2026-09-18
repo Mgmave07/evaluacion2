@@ -15,11 +15,11 @@ public class MainController {
 
     @FXML
     private void initialize() {
-        // 1. Creamos el menú contextual
+
         ContextMenu menuContextual = new ContextMenu();
 
-        // 2. Opción 1: Ver resumen de clientes
-        MenuItem verResumen = new MenuItem("📊 Ver resumen de clientes registrados");
+
+        MenuItem verResumen = new MenuItem("Ver resumen de clientes registrados");
         verResumen.setOnAction(e -> {
             int total = DataHolder.getListaClientes().size();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -29,8 +29,8 @@ public class MainController {
             alert.showAndWait();
         });
 
-        // 3. Opción 2: Limpiar todos los registros (ÚTIL para pruebas)
-        MenuItem limpiarTodo = new MenuItem("🗑️ Limpiar todos los registros");
+
+        MenuItem limpiarTodo = new MenuItem("Limpiar todos los registros");
         limpiarTodo.setOnAction(e -> {
             if (DataHolder.getListaClientes().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -56,10 +56,10 @@ public class MainController {
             });
         });
 
-        // 4. Agregamos las opciones al menú
+
         menuContextual.getItems().addAll(verResumen, limpiarTodo);
 
-        // 5. Asignamos el menú al Label central
+
         lblAreaTrabajo.setContextMenu(menuContextual);
     }
 
@@ -88,15 +88,5 @@ public class MainController {
         }
     }
 
-    // Uso de Dialog personalizado (TextInputDialog)
-    @FXML
-    private void handleAcercaDe() {
-        TextInputDialog dialog = new TextInputDialog("Escriba su nombre");
-        dialog.setTitle("Acerca de / Nota");
-        dialog.setHeaderText("Registro de Nota del Sistema");
-        dialog.setContentText("Por favor, ingrese su nombre:");
-        dialog.showAndWait().ifPresent(nombre -> {
-            System.out.println("Nota registrada por: " + nombre);
-        });
-    }
+
 }

@@ -44,16 +44,16 @@ public class RegistroController {
     @FXML
 
     private void handleAgregarCiudad() {
-        // Creamos el Dialog para escribir texto
+
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Agregar Nueva Ciudad");
         dialog.setHeaderText("La ciudad no se encuentra en la lista");
         dialog.setContentText("Por favor, escriba el nombre de la nueva ciudad:");
 
-        // Mostramos el dialog y esperamos la respuesta
+
         Optional<String> resultado = dialog.showAndWait();
 
-        // Si el usuario escribió algo y dio Aceptar
+
         resultado.ifPresent(nuevaCiudad -> {
             if (!nuevaCiudad.trim().isEmpty()) {
                 // Agregamos la ciudad al ComboBox
@@ -72,7 +72,7 @@ public class RegistroController {
 
     @FXML
     private void handleGuardar() {
-        // Validaciones
+
         if (txtNombres.getText().isEmpty() || txtApellidos.getText().isEmpty() ||
                 cmbTipoCliente.getValue() == null || cmbCiudad.getValue() == null || dpFechaNac.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Complete todos los campos obligatorios.");
@@ -83,12 +83,12 @@ public class RegistroController {
             alert.showAndWait(); return;
         }
 
-        // Obtener datos
+
         RadioButton rbSeleccionado = (RadioButton) tgSolicitud.getSelectedToggle();
         String tipoSol = rbSeleccionado.getText();
         String servicios = (chkAsesoria.isSelected() ? "Asesoría " : "") + (chkSoporte.isSelected() ? "Soporte" : "");
 
-        // Crear y guardar en memoria
+
         Cliente nuevoCliente = new Cliente(txtNombres.getText(), txtApellidos.getText(),
                 cmbTipoCliente.getValue(), cmbCiudad.getValue(), dpFechaNac.getValue(),
                 tipoSol, servicios.trim(), fotoPath);

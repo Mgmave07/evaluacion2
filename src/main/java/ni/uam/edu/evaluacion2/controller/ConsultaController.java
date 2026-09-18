@@ -24,7 +24,7 @@ public class ConsultaController {
         colCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
         colSolicitud.setCellValueFactory(new PropertyValueFactory<>("tipoSolicitud"));
 
-        // Conversión de LocalDate a String para la columna fecha
+
         colFecha.setCellValueFactory(cellData -> {
             LocalDate fecha = cellData.getValue().getFechaNacimiento();
             return new javafx.beans.property.SimpleStringProperty(
@@ -35,10 +35,10 @@ public class ConsultaController {
         tableView.setItems(DataHolder.getListaClientes());
     }
 
-    // Evento de Ratón (MouseEvent): Doble clic para ver detalle
+
     @FXML
     private void handleMouseClick(MouseEvent event) {
-        if (event.getClickCount() == 2) { // Doble clic
+        if (event.getClickCount() == 2) {
             Cliente seleccionado = tableView.getSelectionModel().getSelectedItem();
             if (seleccionado != null) {
                 try {

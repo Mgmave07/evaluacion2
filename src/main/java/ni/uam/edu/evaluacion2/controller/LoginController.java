@@ -19,7 +19,7 @@ public class LoginController {
         @FXML private Button btnIniciar;
         @FXML private Button btnSalir;
 
-        // Evento de Teclado (KeyEvent): Presionar ENTER en el password inicia sesión
+
         @FXML
         private void handlePasswordKeyPressed(KeyEvent event) {
             if (event.getCode() == KeyCode.ENTER) {

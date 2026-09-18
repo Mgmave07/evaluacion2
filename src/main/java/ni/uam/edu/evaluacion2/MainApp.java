@@ -39,7 +39,7 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ni/uam/edu/evaluacion2/detalle.fxml"));
         Parent root = loader.load();
 
-        // Pasa el cliente al controlador de detalle
+
         DetalleController controller = loader.getController();
         controller.setCliente(cliente);
 

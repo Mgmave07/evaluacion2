@@ -36,7 +36,7 @@ public class DetalleController {
         }
     }
 
-    // Evento de Teclado (KeyEvent): Presionar ESC para volver
+
     @FXML
     private void handleKeyPressed(KeyEvent event) {
         if (event.getCode() == KeyCode.ESCAPE) {
